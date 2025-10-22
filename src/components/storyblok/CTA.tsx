@@ -83,7 +83,7 @@ const CTA: React.FC<CTAProps> = ({ blok }) => {
 
   if (variant === 'split') {
     return (
-      <section {...storyblokEditable(blok)} className="py-16 sm:py-24">
+      <section {...storyblokEditable(blok as any)} className="py-16 sm:py-24">
         <div className={cn('rounded-2xl', backgroundStyles[background])}>
           <div className="container-wide py-16">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 items-center">
@@ -124,7 +124,7 @@ const CTA: React.FC<CTAProps> = ({ blok }) => {
   }
 
   return (
-    <section {...storyblokEditable(blok)} className="py-16 sm:py-24">
+    <section {...storyblokEditable(blok as any)} className="py-16 sm:py-24">
       <div className={cn('rounded-2xl', backgroundStyles[background])}>
         <div className="container-wide py-16">
           <div className={cn(
