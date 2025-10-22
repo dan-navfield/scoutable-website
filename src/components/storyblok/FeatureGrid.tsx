@@ -27,7 +27,7 @@ const FeatureGrid: React.FC<FeatureGridProps> = ({ blok }) => {
   };
 
   return (
-    <section {...storyblokEditable(blok)} className="py-16 sm:py-24">
+    <section {...storyblokEditable(blok as any)} className="py-16 sm:py-24">
       <div className="container-wide">
         {/* Header */}
         {(title || description) && (
@@ -72,7 +72,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ blok }) => {
 
   const content = (
     <Card 
-      {...storyblokEditable(blok)}
+      {...storyblokEditable(blok as any)}
       className="h-full transition-all duration-200 hover:shadow-lg group"
       padding="lg"
     >

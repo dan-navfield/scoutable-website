@@ -1,6 +1,14 @@
-import { StoryblokStory } from '@storyblok/react';
-
 // Base Storyblok types
+export interface StoryblokStory {
+  id: number;
+  uuid: string;
+  name: string;
+  slug: string;
+  full_slug: string;
+  created_at: string;
+  published_at: string;
+  content: any;
+}
 export interface StoryblokAsset {
   id: number;
   alt: string;

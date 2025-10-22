@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${sitemapData
     .map(
-      (item) => `
+      (item: any) => `
   <url>
     <loc>${process.env.NEXT_PUBLIC_SITE_URL}/${item.slug}</loc>
     <lastmod>${item.lastmod}</lastmod>

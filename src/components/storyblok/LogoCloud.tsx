@@ -11,7 +11,7 @@ const LogoCloud: React.FC<LogoCloudProps> = ({ blok }) => {
   const { title, logos } = blok;
 
   return (
-    <section {...storyblokEditable(blok)} className="py-16 sm:py-24">
+    <section {...storyblokEditable(blok as any)} className="py-16 sm:py-24">
       <div className="container-wide">
         {title && (
           <div className="text-center mb-16">
@@ -40,7 +40,7 @@ const LogoItem: React.FC<LogoItemProps> = ({ blok }) => {
 
   const logoElement = (
     <div 
-      {...storyblokEditable(blok)}
+      {...storyblokEditable(blok as any)}
       className="flex items-center justify-center p-4 transition-all duration-200 hover:scale-105"
     >
       <div className="relative h-12 w-full max-w-32">

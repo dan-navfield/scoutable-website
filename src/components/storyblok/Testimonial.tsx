@@ -20,7 +20,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ blok }) => {
   } = blok;
 
   return (
-    <section {...storyblokEditable(blok)} className="py-16 sm:py-24">
+    <section {...storyblokEditable(blok as any)} className="py-16 sm:py-24">
       <div className="container-narrow">
         <Card className="relative overflow-hidden" padding="xl">
           <CardContent className="space-y-8">

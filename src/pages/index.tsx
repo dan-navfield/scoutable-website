@@ -60,7 +60,7 @@ const HomePage: React.FC<HomePageProps> = ({ story, preview }) => {
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   try {
-    const story = await fetchStory('home', preview);
+    const story = await fetchStory('home', preview ? 'true' : 'false');
 
     return {
       props: {

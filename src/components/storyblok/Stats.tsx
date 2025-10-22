@@ -11,7 +11,7 @@ const Stats: React.FC<StatsProps> = ({ blok }) => {
   const { title, stats } = blok;
 
   return (
-    <section {...storyblokEditable(blok)} className="py-16 sm:py-24">
+    <section {...storyblokEditable(blok as any)} className="py-16 sm:py-24">
       <div className="container-wide">
         {title && (
           <div className="text-center mb-16">
@@ -39,7 +39,7 @@ const StatItem: React.FC<StatItemProps> = ({ blok }) => {
   const { value, label, qualifier } = blok;
 
   return (
-    <div {...storyblokEditable(blok)} className="text-center">
+    <div {...storyblokEditable(blok as any)} className="text-center">
       <div className="space-y-2">
         <div className="flex items-baseline justify-center space-x-1">
           <span className="text-4xl font-bold text-primary-600 dark:text-primary-400 sm:text-5xl">

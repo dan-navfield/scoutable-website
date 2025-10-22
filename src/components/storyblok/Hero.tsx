@@ -34,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ blok }) => {
 
   return (
     <section
-      {...storyblokEditable(blok)}
+      {...storyblokEditable(blok as any)}
       className={cn(
         'relative overflow-hidden py-16 sm:py-24 lg:py-32',
         backgroundStyles[background_variant]

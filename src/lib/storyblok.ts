@@ -1,7 +1,7 @@
-import { StoryblokApi, storyblokInit, apiPlugin } from '@storyblok/react';
+import { storyblokInit, apiPlugin, useStoryblokApi } from '@storyblok/react';
 
 // Initialize Storyblok
-const { storyblokApi } = storyblokInit({
+storyblokInit({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
   apiOptions: {
@@ -9,14 +9,27 @@ const { storyblokApi } = storyblokInit({
   },
 });
 
-export { storyblokApi };
-
 // Helper functions
-export const getStoryblokApi = (): StoryblokApi => {
-  if (!storyblokApi) {
-    throw new Error('Storyblok API not initialized');
-  }
-  return storyblokApi;
+export const getStoryblokApi = () => {
+  // For server-side usage, we'll create a simple fetch-based implementation
+  const baseUrl = 'https://api.storyblok.com/v2/cdn';
+  const token = process.env.STORYBLOK_ACCESS_TOKEN;
+  
+  return {
+    get: async (path: string, options: any = {}) => {
+      const params = new URLSearchParams({
+        token: token || '',
+        ...options,
+      });
+      
+      const response = await fetch(`${baseUrl}/${path}?${params}`);
+      if (!response.ok) {
+        throw new Error(`Storyblok API error: ${response.statusText}`);
+      }
+      
+      return response.json();
+    }
+  };
 };
 
 export const isPreview = (preview?: string | string[]): boolean => {
