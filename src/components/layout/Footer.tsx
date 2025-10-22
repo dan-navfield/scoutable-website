@@ -12,6 +12,12 @@ import {
   ArrowRight 
 } from 'lucide-react';
 
+interface FooterLink {
+  name: string;
+  href: string;
+  external?: boolean;
+}
+
 const footerNavigation = {
   product: {
     title: 'Product',
@@ -22,7 +28,7 @@ const footerNavigation = {
       { name: 'Talent Development', href: '/product/modules/talent-development' },
       { name: 'Security & Compliance', href: '/security' },
       { name: 'Integrations', href: '/product/integrations' },
-    ],
+    ] as FooterLink[],
   },
   solutions: {
     title: 'Solutions',
@@ -32,7 +38,7 @@ const footerNavigation = {
       { name: 'HR & Talent Acquisition', href: '/solutions/hr-talent-acquisition' },
       { name: 'Vendor Management', href: '/solutions/vendor-management' },
       { name: 'Partner Ecosystem', href: '/solutions/partner-ecosystem' },
-    ],
+    ] as FooterLink[],
   },
   resources: {
     title: 'Resources',
@@ -43,7 +49,7 @@ const footerNavigation = {
       { name: 'Blog', href: '/resources?type=blog' },
       { name: 'Webinars', href: '/resources?type=webinar' },
       { name: 'Product Updates', href: '/resources?type=changelog' },
-    ],
+    ] as FooterLink[],
   },
   company: {
     title: 'Company',
@@ -53,7 +59,7 @@ const footerNavigation = {
       { name: 'Press & Media', href: '/company/press' },
       { name: 'Contact', href: '/company/contact' },
       { name: 'Status', href: 'https://status.scoutable.app', external: true },
-    ],
+    ] as FooterLink[],
   },
   legal: {
     title: 'Legal',
@@ -62,7 +68,7 @@ const footerNavigation = {
       { name: 'Terms of Service', href: '/legal/terms' },
       { name: 'Acceptable Use', href: '/legal/acceptable-use' },
       { name: 'Security Posture', href: '/security' },
-    ],
+    ] as FooterLink[],
   },
 };
 
